@@ -1,6 +1,17 @@
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<div class="form-control">
+  <input
+    type="text"
+    id="text"
+    placeholder="Search"
+    [(ngModel)]="searchWord"
+    
+  />
+  <!-- <button   (click)="searchText()"> searche</button> -->
+</div>
+
 <app-task-item
-  *ngFor="let task of tasks"
+  *ngFor="let task of resiltstasks |searchFilter:searchWord"
   [task]="task"
   (onDeleteTask)="deleteTask(task.id)"
   (onToggleReminder)="toggleReminder(task)"

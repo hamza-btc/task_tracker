@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './task-item.component.css'
 })
 export class TaskItemComponent implements OnInit{
- constructor (private taskService : TaskService) {}
+ constructor () {}
  @Input() task : Task | undefined ;
 
  @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
